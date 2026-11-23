@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "source_repo": "https://github.com/silverioleitejr/app-og1-bootstrap",
+  "directories": [
+    "docs",
+    "docs/templates",
+    "docs/sdd",
+    ".agents/skills",
+    "src",
+    "db"
+  ],
+  "gitkeep": [
+    "docs/sdd/.gitkeep",
+    "src/.gitkeep",
+    "db/.gitkeep"
+  ],
+  "copy_files": [
+    {
+      "from": "docs/GUIDELINE.md",
+      "to": "docs/GUIDELINE.md",
+      "mode": "exact"
+    }
+  ],
+  "copy_dirs": [
+    {
+      "from": "docs/templates",
+      "to": "docs/templates",
+      "include": ["*.md"],
+      "exclude": [".env", ".env.*"]
+    },
+    {
+      "from": "docs/skills",
+      "to": ".agents/skills",
+      "exclude": []
+    }
+  ],
+  "instantiate_from_templates": [
+    {
+      "template": "docs/templates/DATABASE-PATTERN-TEMPLATE.md",
+      "to": "docs/DATABASE-PATTERN.md",
+      "fallback_placeholder": true
+    },
+    {
+      "template": "docs/templates/NAMING-CONVENTION-TEMPLATE.md",
+      "to": "docs/NAMING-CONVENTION.md",
+      "fallback_placeholder": true
+    },
+    {
+      "template": "docs/templates/DESIGN-TEMPLATE.md",
+      "to": "docs/DESIGN.md",
+      "fallback_placeholder": true
+    },
+    {
+      "template": "docs/templates/TO-DO-TEMPLATE.md",
+      "to": "docs/TO-DO.md",
+      "fallback_placeholder": true
+    }
+  ],
+  "gitignore_required_entries": [
+    "README.ini",
+    "readme.ini",
+    ".env",
+    "**/.env",
+    ".env.*",
+    "**/.env.*"
+  ]
+}
